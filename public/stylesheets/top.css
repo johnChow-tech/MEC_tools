@@ -2,16 +2,25 @@ html {
   font-family: "M PLUS 2", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  font-size: 1rem;
 }
 
 body {
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-rows: 1fr 9fr 1fr;
 }
 
 #funtions {
+  grid-column: 2/3;
+  grid-row: 2/3;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.25rem;
+  gap: 1px;
+  padding: 1rem 2rem 3rem 2rem;
+  border-radius: 7px;
+  background-color: #f9f9f9;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px white;
 }
 
 a {
@@ -23,7 +32,7 @@ a {
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: 0.5rem 1fr;
-  transition: grid-template-columns 0.5s ease-in-out;
+  transition: grid-template-columns 300ms ease;
 }
 
 .titles.is-grown {
@@ -37,22 +46,23 @@ a {
 }
 
 .card-hyperLink, .card-forms {
-  border: 1px solid #ffafcc;
+  margin: 0.1rem;
   text-align: left;
   border-radius: 7px;
-  background-color: #ffc8dd;
   transition: all 550ms ease-in-out;
+  background-color: #f9f9f9;
 }
 .card-hyperLink:hover, .card-forms:hover {
-  background-color: #ffafcc;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px white;
+  background-color: #ffc8dd;
 }
 
 .card-forms {
   display: grid;
-  padding: 2rem;
+  padding: 1rem;
 }
 .card-forms .card-text {
-  font-size: 1.25rem;
+  font-size: clamp(0.75rem, 0.75rem + 1vw, 1.25rem);
   justify-self: center;
   align-self: center;
 }
@@ -71,6 +81,7 @@ a {
   height: 2rem;
 }
 .card-hyperLink .link-description {
+  font-size: 1rem;
   justify-self: center;
   align-self: center;
 }
