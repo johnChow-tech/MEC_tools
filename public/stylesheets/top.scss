@@ -1,0 +1,95 @@
+// DEFINE VARIABLES
+// font configs
+$font-family-base: "M PLUS 2", sans-serif;
+$font-size-base: 16px;
+$font-weight-base: 400;
+// color configs
+$color-text-default: #240000e5;
+$color-growth: #cdb4db;
+$color-component-bg: #ffc8dd;
+$color-component-interactive: #ffafcc;
+
+// basic configs
+html {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  //  background-color: $purple;
+}
+body {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+// general grid configs
+#funtions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+}
+
+// parts configs
+a {
+  text-decoration: none;
+  color: $color-text-default;
+}
+
+.titles {
+  grid-column: 1/-1;
+//   border-bottom: 1px solid $color-text-default;
+  display: grid;
+  grid-template-columns: 0.5rem 1fr;
+  transition: grid-template-columns 0.5s ease-in-out;
+}
+.titles.is-grown {
+  grid-template-columns: 7rem 1fr;
+}
+.titles-animation-grow {
+  grid-column: 1 / 2;
+  background-color: $color-growth;
+  cursor: pointer;
+}
+// card-base
+%card-base {
+  border: 1px solid $color-component-interactive;
+  text-align: left;
+  border-radius: 7px;
+  background-color: $color-component-bg;
+  transition: all 550ms ease-in-out;
+  // hover
+  &:hover {
+    background-color: $color-component-interactive;
+  }
+}
+
+// .forms cards config
+.card-forms {
+  @extend %card-base;
+  display: grid;
+  padding: 2rem;
+  .card-text {
+    font-size: 1.25rem;
+    // padding-left: 1rem;
+    justify-self: center;
+    align-self: center;
+  }
+}
+// .hyperlink cards config
+.card-hyperLink {
+  @extend %card-base;
+  grid-column: span 2;
+  //   divid .hyperlink into 2 part
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  align-items: center;
+  color: $color-text-default;
+  .site-icon {
+    margin: 0.5rem;
+    justify-self: start;
+    align-self: center;
+    height: 2rem;
+  }
+  .link-description {
+    justify-self: center;
+    align-self: center;
+  }
+}

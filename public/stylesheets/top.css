@@ -1,0 +1,76 @@
+html {
+  font-family: "M PLUS 2", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+body {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+#funtions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(36, 0, 0, 0.8980392157);
+}
+
+.titles {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 0.5rem 1fr;
+  transition: grid-template-columns 0.5s ease-in-out;
+}
+
+.titles.is-grown {
+  grid-template-columns: 7rem 1fr;
+}
+
+.titles-animation-grow {
+  grid-column: 1/2;
+  background-color: #cdb4db;
+  cursor: pointer;
+}
+
+.card-hyperLink, .card-forms {
+  border: 1px solid #ffafcc;
+  text-align: left;
+  border-radius: 7px;
+  background-color: #ffc8dd;
+  transition: all 550ms ease-in-out;
+}
+.card-hyperLink:hover, .card-forms:hover {
+  background-color: #ffafcc;
+}
+
+.card-forms {
+  display: grid;
+  padding: 2rem;
+}
+.card-forms .card-text {
+  font-size: 1.25rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.card-hyperLink {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  align-items: center;
+  color: rgba(36, 0, 0, 0.8980392157);
+}
+.card-hyperLink .site-icon {
+  margin: 0.5rem;
+  justify-self: start;
+  align-self: center;
+  height: 2rem;
+}
+.card-hyperLink .link-description {
+  justify-self: center;
+  align-self: center;
+}

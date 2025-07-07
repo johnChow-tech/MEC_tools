@@ -3,28 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>MEC TOOL</title>
+    <link rel="stylesheet" href="stylesheets/top.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="javascripts/animation.js" defer></script>
   </head>
   <body>
-    <h1 class="titles" id="titles-report">日報</h1>
-    <span class="forms" id="work-log-form">出勤用</span>
-    <span class="forms" id="late-log-form">遅刻用</span>
-    <span class="forms" id="application-form">届出申請用</span>
-    <h1 class="titles" id="titles-sitemap">サイトマップ</h1>
-    <span class="HyperLink" id="canbus-homepage">
-      <a href="https://systena.canbus.com/"
-        ><img
+    <section id="funtions">
+      <h1 class="titles" id="titles-report">
+        <div class="titles-animation-grow"></div>
+        <div class="titles-text" id="titles-log">日報</div>
+      </h1>
+      <a href="" class="card-forms" id="work-log-card"
+        ><span class="card-text" id="work-log-card-text">出勤用</span></a
+      >
+      <a href="" class="card-forms" id="late-log-card"
+        ><span class="card-text" id="late-log-card-text">遅刻用</span></a
+      >
+      <a href="" class="card-forms" id="application-card"
+        ><span class="card-text" id="application-card-text">届出申請用</span></a
+      >
+      <h1 class="titles" id="titles-sitemap">
+        <div class="titles-animation-grow"></div>
+        <div class="titles-text" id="titles-sitemap">サイトマップ</div>
+      </h1>
+      <a
+        href="https://systena.canbus.com/"
+        target="_blank"
+        class="card-hyperLink"
+      >
+        <img
+          class="site-icon"
           id="canbus-icon"
           src="images/canbus.favicon.ico"
           alt=""
-        />Canbus.</a
+        />
+        <span class="link-description" id="canbus">Canbus.</span>
+      </a>
+      <a
+        href="https://www.mec.docomo.ne.jp/"
+        target="_blank"
+        class="card-hyperLink"
       >
-    </span>
-    <span class="HyperLink" id="mec-portal-homepage">
-      <a href="https://www.mec.docomo.ne.jp/">
-        <img id="mec-icon" src="images/mec.favicon.ico" alt="" />
-        MEC Portal</a
+        <img
+          class="site-icon"
+          id="mec-icon"
+          src="images/mec.favicon.ico"
+          alt=""
+        />
+        <span class="link-description" id="mec">MEC Portal</span>
+      </a>
+      <a
+        href="https://drive.google.com/drive/folders/1ywvAdKdNVuHZmr_pDZ5UxM8J8vE63KUN"
+        class="card-hyperLink"
+        target="_blank"
       >
-    </span>
+        <img
+          class="site-icon"
+          id="drive-icon"
+          src="images/googleDrive.png"
+          alt=""
+        />
+        <span class="link-description" id="drive">
+          <div></div>
+          <div>MEC共有アイテム</div>
+        </span>
+      </a>
+    </section>
+    <!-- <section id="hamburger-menu"></section> -->
   </body>
 </html>
