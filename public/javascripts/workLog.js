@@ -1,14 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const VERTICAL_SECTION = ".form-tabs-vertical";
-  const TAB_ID = ".f-tab";
-
-  switchTab(VERTICAL_SECTION + " " + TAB_ID);
+  switchTab(".form-tabs-vertical .f-tab");
 });
 
 function switchTab(tabBtnId) {
   const ACTIVED = "is-active";
   const PANEL_CLASS = ".work-log-panel";
-
   const tabButtons = document.querySelectorAll(tabBtnId);
   const contentPanels = document.querySelectorAll(PANEL_CLASS);
 
