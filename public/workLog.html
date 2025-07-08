@@ -28,8 +28,12 @@
       <div class="f-tab" id="application-tab">届出申請用</div>
     </section>
     <section class="form-tabs-vertical">
-      <div class="f-tab" id="self-tab">出</div>
-      <div class="f-tab" id="late-log-tab">退</div>
+      <div class="f-tab" data-target="#work-log-panel-start" id="start-tab-v">
+        出
+      </div>
+      <div class="f-tab" data-target="#work-log-panel-end" id="end-tab-v">
+        退
+      </div>
     </section>
 
     <div class="work-log-panel is-active" id="work-log-panel-start">
@@ -155,5 +159,6 @@
       </section>
     </div>
     <div class="form-popup" id="popup-copied">Copied to Clipboard.</div>
+    <script src="javascripts/workLog.js"></script>
   </body>
 </html>
