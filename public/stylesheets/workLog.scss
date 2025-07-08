@@ -1,0 +1,39 @@
+// DEFINE VARIABLES
+// font configs
+$font-family-base: "M PLUS 2", sans-serif;
+$font-size-base: 16px;
+$font-weight-base: 400;
+// color configs
+$color-text-default: #240000e5;
+$color-growth: #cdb4db;
+$color-component-bg: #ffc8dd;
+$color-component-interactive: #ffafcc;
+$color-box-background: #f9f9f9;
+$shadow-box-hover: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px white;
+$shadow-card-hover: 3px 3px 3px rgba(0, 0, 0, 0.1), 0px 0px;
+
+// basic configs
+html {
+  // normalize html
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  // normalize font configs
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+}
+
+body {
+  display: grid;
+  box-shadow: $shadow-box-hover;
+}
+
+.work-log-panel {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}

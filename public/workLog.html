@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <!-- time seclector lib -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="stylesheets/workLog.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>MEC TOOL :: reports</title>
+  </head>
+  <body>
+    <section class="form-tabs-horizontal">
+      <div class="f-tab" id="self-tab">出/退勤用</div>
+      <div class="f-tab" id="late-log-tab">遅刻用</div>
+      <div class="f-tab" id="application-tab">届出申請用</div>
+    </section>
+    <section class="form-tabs-vertical">
+      <div class="f-tab" id="self-tab">出</div>
+      <div class="f-tab" id="late-log-tab">退</div>
+    </section>
+
+    <div class="work-log-panel is-active" id="work-log-panel-start">
+      <section class="form-frame-start">
+        <div class="title" id="main-title">
+          <span class="title-text" id="main-title-text">出勤用</span>
+        </div>
+        <!-- st :: start time -->
+        <div class="st-wrapper">
+          <div class="title" id="sub-title-st">
+            <span class="title-text" id="sub-title-text-st">【開始時刻】</span>
+            <input
+              class="form-input"
+              type="time"
+              id="form-input-st"
+              name="work_start_time"
+            />
+          </div>
+        </div>
+        <!-- wp :: work place -->
+        <div class="wp-wrapper">
+          <div class="title" id="sub-title-wp">
+            <span class="title-text" id="sub-title-text-wp">【開始場所】</span>
+            <div class="selector">
+              <select
+                name="work_start_place"
+                id="selector-wp"
+                class=""
+                placeholder="川崎"
+              >
+                <option value="kawasaki">川崎</option>
+                <option value="remote">在宅</option>
+                <option value="hamamatsucyo">本社</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- pc :: physical condition -->
+        <div class="pc-wrapper">
+          <div class="title" id="sub-title-pc">
+            <span class="title-text" id="sub-title-text-pc">【体調】</span>
+            <input
+              name="work_start_phys"
+              class="form-input"
+              id="form-input-pc"
+              type="text"
+              placeholder="問題なし"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="form-confirm-start">
+        <div class="form-confirm-text"></div>
+        <div class="form-confirm-btn" id="form-btn"></div>
+      </section>
+    </div>
+    <div class="work-log-panel" id="work-log-panel-end">
+      <section class="form-frame-end">
+        <div class="title" id="main-title">
+          <span class="title-text" id="main-title-text">退勤用</span>
+        </div>
+        <!-- et :: end time -->
+        <div class="et-wrapper">
+          <div class="title" id="sub-title-et">
+            <span class="title-text" id="sub-title-text-et">【終了時刻】</span>
+            <input
+              class="form-input"
+              type="time"
+              id="form-input-et"
+              name="work_start_time"
+              step="300"
+            />
+          </div>
+        </div>
+        <!-- ep :: end place -->
+        <div class="ep-wrapper">
+          <div class="title" id="sub-title-ep">
+            <span class="title-text" id="sub-title-text-ep">【終了場所】</span>
+            <div class="selector">
+              <select
+                name="work_start_place"
+                id="selector-ep"
+                class=""
+                placeholder="川崎"
+              >
+                <option value="kawasaki">川崎</option>
+                <option value="remote">在宅</option>
+                <option value="hamamatsucyo">本社</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- cb :: canbus -->
+        <div class="cb-wrapper">
+          <div class="title" id="sub-title-cb">
+            <span class="title-text" id="sub-title-text-cb">【Canbus.】</span>
+            <input
+              name="work_start_phys"
+              class="form-input"
+              id="form-input-cb"
+              type="text"
+              placeholder="投入済み"
+            />
+          </div>
+          <!-- sc :: security card -->
+          <div class="sc-wrapper">
+            <span class="title-text" id="sub-title-text-sc"
+              >【セキュリティカード】</span
+            >
+            <input
+              name="work_start_phys"
+              class="form-input"
+              id="form-input-sc"
+              type="text"
+              placeholder="持ち帰ります"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="form-confirm-start">
+        <div class="form-confirm-text"></div>
+        <div class="form-confirm-btn" id="form-btn"></div>
+      </section>
+    </div>
+    <div class="form-popup" id="popup-copied">Copied to Clipboard.</div>
+  </body>
+</html>
