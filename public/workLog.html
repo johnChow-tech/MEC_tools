@@ -64,13 +64,13 @@
             </div>
             <!-- wp :: work place -->
             <div class="wp-wrapper">
-              <div class="sub-title" id="sub-title-wp">
+              <div class="sub-title" id="sub-title-swp">
                 <span class="title-text" id="sub-title-text-wp"
                   >【開始場所】</span
                 >
                 <select
                   name="work_start_place"
-                  id="selector-wp"
+                  id="form-input-swp"
                   class="form-input"
                   placeholder="川崎"
                 >
@@ -110,7 +110,7 @@
                   class="form-input"
                   type="time"
                   id="form-input-et"
-                  name="work_start_time"
+                  name="work_end_time"
                   step="300"
                 />
               </div>
@@ -122,8 +122,8 @@
                   >【終了場所】</span
                 >
                 <select
-                  name="work_start_place"
-                  id="selector-ep"
+                  name="work_end_place"
+                  id="form-input-swp"
                   class="form-input"
                   placeholder="川崎"
                 >
@@ -140,7 +140,7 @@
                   >【Canbus.】</span
                 >
                 <input
-                  name="work_start_phys"
+                  name="work_end_canbus"
                   class="form-input"
                   id="form-input-cb"
                   type="text"
@@ -154,7 +154,7 @@
                     >【セキュリティカード】</span
                   >
                   <input
-                    name="work_start_phys"
+                    name="work_end_securitycard"
                     class="form-input"
                     id="form-input-sc"
                     type="text"
@@ -169,10 +169,10 @@
           <span class="form-confirm-btn-text" id="form-btn-text">文章生成</span>
         </div>
         <div class="form-popup" id="popup-copied">
-          <span id="form-popup-text"> Copied to Clipboard. </span>
+          <span id="form-popup-text"> </span>
         </div>
       </section>
     </section>
-    <script src="javascripts/workLog.js"></script>
+    <script type="module" src="javascripts/workLog.js"></script>
   </body>
 </html>
