@@ -1,0 +1,133 @@
+// refer to _variables.scss
+@use 'variables' as *;
+// basic configs
+html {
+  // normalize html
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  // normalize font configs
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+}
+
+body {
+  //   display: grid;
+  box-shadow: $shadow-box-hover;
+}
+
+// parent contents
+#contents {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  place-items: center;
+  //   padding: 3rem 2rem 8rem 2rem;
+  border-radius: 7px;
+  background-color: $color-box-background;
+}
+
+// tabs configs
+%tab-base {
+  position: absolute;
+}
+
+#tabs {
+  .form-tabs-vertical {
+    @extend %tab-base;
+    right: 100%;
+    margin-right: -3px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    .f-tab {
+      //   border: 1px solid $color-component-interactive;
+      border-radius: 5px 0 0 5px;
+      padding: 1rem;
+      border-right: none;
+      background-color: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-right: none;
+      &.is-active {
+        box-shadow: $shadow-tab-active;
+        background-color: $color-box-background;
+      }
+      .f-tab-text {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// panels configs
+#panels {
+  display: grid;
+  width: 40rem;
+  height: 25rem;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 9fr 1fr;
+  place-items: center;
+
+  .work-log-panel {
+    width: 33rem;
+    height: 13rem;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    // for tab switching
+    display: none;
+    &.is-active {
+      display: block;
+    }
+
+    .form-frame {
+      width: 100%;
+
+      .main-title {
+        justify-items: center;
+        justify-self: center;
+        grid-column: 3/4;
+        margin-top: -0.5rem;
+        padding: 0 0 2rem 0;
+        .title-text {
+          font-size: 1.75rem;
+        }
+      }
+      .sub-title {
+        display: flex;
+        width: 3fr;
+        align-items: start;
+        padding: 0.25rem 0 0.25rem 3rem;
+
+        .title-text {
+          font-size: 1.1rem;
+          min-width: 14rem;
+          margin-right: 0.5rem;
+          white-space: nowrap;
+        }
+        // input box config
+        .form-input {
+          margin-right: 3rem;
+          margin-left: 3rem;
+          flex: 1;
+          min-width: 0;
+          padding-left: 0.5rem;
+          font-size: 1rem;
+          border: 1px solid $color-box-input;
+          border-radius: 7px;
+          transition: all 0.2s ease;
+          &:focus {
+            box-shadow: $shadow-box-focus;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
