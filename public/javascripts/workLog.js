@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   switchTab(".form-tabs-vertical .f-tab");
+  showPopup();
 });
 
 function switchTab(tabBtnId) {
@@ -23,5 +24,24 @@ function switchTab(tabBtnId) {
         targetPanel.classList.add(ACTIVED);
       }
     });
+  });
+}
+
+function showPopup() {
+  const BTN_ID = "#form-btn";
+  const POPUP_CLASS = ".form-popup";
+  const VISIBLE = "is-visible";
+
+  const btn = document.querySelector(BTN_ID);
+  const pop = document.querySelector(POPUP_CLASS);
+
+  let popupTimer;
+
+  btn.addEventListener("click", () => {
+    clearTimeout(popupTimer);
+    pop.classList.add(VISIBLE);
+    popupTimer = setTimeout(() => {
+      pop.classList.remove(VISIBLE);
+    }, 2000);
   });
 }

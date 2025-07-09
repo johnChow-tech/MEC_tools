@@ -83,6 +83,7 @@ body {
     height: 13rem;
     grid-column: 2/3;
     grid-row: 2/3;
+
     // for tab switching
     display: none;
     &.is-active {
@@ -139,6 +140,11 @@ body {
     }
   }
 
+  #dividing-line {
+    border-top: 1px solid $color-text-default;
+    width: 3rem;
+  }
+
   #form-btn {
     grid-column: 2/3;
     grid-row: 2/3;
@@ -147,6 +153,7 @@ body {
     border-radius: 7px;
     border: 1px solid $color-component-interactive;
     transition: $transition-base;
+    cursor: pointer;
 
     &:hover {
       background-color: $color-component-bg;
@@ -170,8 +177,8 @@ body {
   align-items: center;
   justify-content: center;
   position: fixed;
-  //   visibility: hidden;
-  //   opacity: 0;
+  visibility: hidden;
+  opacity: 0;
   bottom: 0.5rem;
   right: 0.5rem;
   border: 1px solid $color-box-input;
