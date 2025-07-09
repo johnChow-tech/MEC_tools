@@ -94,10 +94,6 @@
               </div>
             </div>
           </section>
-          <section class="form-confirm-start">
-            <div class="form-confirm-text"></div>
-            <div class="form-confirm-btn" id="form-btn"></div>
-          </section>
         </div>
         <div class="work-log-panel" id="work-log-panel-end">
           <section class="form-frame end">
@@ -169,13 +165,14 @@
             </div>
           </section>
         </div>
-        <section class="form-confirm-start">
-          <div class="form-confirm-text"></div>
-          <div class="form-confirm-btn" id="form-btn"></div>
-        </section>
+        <div class="form-confirm-btn" id="form-btn">
+          <span class="form-confirm-btn-text" id="form-btn-text">文章生成</span>
+        </div>
       </section>
+      <div class="form-popup hide" id="popup-copied">
+        <span id="form-popup-text"> Copied to Clipboard. </span>
+      </div>
     </section>
-    <div class="form-popup" id="popup-copied">Copied to Clipboard.</div>
     <script src="javascripts/workLog.js"></script>
   </body>
 </html>

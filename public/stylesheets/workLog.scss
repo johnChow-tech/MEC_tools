@@ -1,5 +1,5 @@
 // refer to _variables.scss
-@use 'variables' as *;
+@use "variables" as *;
 // basic configs
 html {
   // normalize html
@@ -51,12 +51,16 @@ body {
       border-right: none;
       background-color: none;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: $transition-base;
       border-right: none;
+      z-index: 1;
+
       &.is-active {
         box-shadow: $shadow-tab-active;
         background-color: $color-box-background;
+        z-index: 2;
       }
+
       .f-tab-text {
         font-weight: 500;
       }
@@ -72,6 +76,7 @@ body {
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 9fr 1fr;
   place-items: center;
+  z-index: 3;
 
   .work-log-panel {
     width: 33rem;
@@ -93,10 +98,12 @@ body {
         grid-column: 3/4;
         margin-top: -0.5rem;
         padding: 0 0 2rem 0;
+
         .title-text {
           font-size: 1.75rem;
         }
       }
+
       .sub-title {
         display: flex;
         width: 3fr;
@@ -109,6 +116,7 @@ body {
           margin-right: 0.5rem;
           white-space: nowrap;
         }
+
         // input box config
         .form-input {
           margin-right: 3rem;
@@ -119,15 +127,68 @@ body {
           font-size: 1rem;
           border: 1px solid $color-box-input;
           border-radius: 7px;
-          transition: all 0.2s ease;
+          transition: $transition-base;
+
+          &:hover,
           &:focus {
             box-shadow: $shadow-box-focus;
-          }
-          &:hover {
             cursor: pointer;
           }
         }
       }
     }
+  }
+
+  #form-btn {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    place-self: end center;
+    padding: 1rem;
+    border-radius: 7px;
+    border: 1px solid $color-component-interactive;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $color-component-bg;
+      box-shadow: $shadow-btn-hover;
+    }
+
+    &:active {
+      background-color: $color-component-interactive;
+      box-shadow: $shadow-btn-active;
+    }
+
+    #form-btn-text {
+      place-self: center center;
+      text-align: center;
+    }
+  }
+}
+
+.form-popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  //   visibility: hidden;
+  //   opacity: 0;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  border: 1px solid $color-box-input;
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+  background-color: $color-popup-box;
+  transition: $transition-base;
+  z-index: 1000;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #form-popup-text {
+    text-align: center;
+    color: $color-popup-text;
+    font-size: 0.75rem;
   }
 }
