@@ -1,18 +1,5 @@
-// DEFINE VARIABLES
-// font configs
-$font-family-base: "M PLUS 2", sans-serif;
-$font-size-base: 16px;
-$font-weight-base: 400;
-// color configs
-$color-text-default: #240000e5;
-$color-growth: #cdb4db;
-$color-component-bg: #ffc8dd;
-$color-component-interactive: #ffafcc;
-$color-box-background: #f9f9f9;
-$shadow-box-hover: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px white;
-$shadow-tab-active: -5px 7px 5px -1px rgba(0, 0, 0, 0.1);
-$shadow-card-hover: 3px 3px 3px rgba(0, 0, 0, 0.1), 0px 0px;
-
+// refer to _variables.scss
+@use 'variables' as *;
 // basic configs
 html {
   // normalize html
@@ -83,40 +70,64 @@ body {
   width: 40rem;
   height: 25rem;
   grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 9fr 1fr;
   place-items: center;
 
   .work-log-panel {
-    width: 30rem;
-    height: 15rem;
+    width: 33rem;
+    height: 13rem;
     grid-column: 2/3;
     grid-row: 2/3;
-
-    .main-title {
-      justify-items: center;
-      justify-self: center;
-      padding: 0 0 2rem 0;
-      .title-text {
-        font-size: 1.75rem;
-      }
+    // for tab switching
+    display: none;
+    &.is-active {
+      display: block;
     }
 
-    .sub-title {
-      justify-items: center;
-      justify-self: start;
-      padding: 0.25rem;
+    .form-frame {
+      width: 100%;
 
-      .form-input {
-        display: inline-block;
+      .main-title {
+        justify-items: center;
+        justify-self: center;
+        grid-column: 3/4;
+        margin-top: -0.5rem;
+        padding: 0 0 2rem 0;
+        .title-text {
+          font-size: 1.75rem;
+        }
+      }
+      .sub-title {
+        display: flex;
+        width: 3fr;
+        align-items: start;
+        padding: 0.25rem 0 0.25rem 3rem;
+
+        .title-text {
+          font-size: 1.1rem;
+          min-width: 14rem;
+          margin-right: 0.5rem;
+          white-space: nowrap;
+        }
+        // input box config
+        .form-input {
+          margin-right: 3rem;
+          margin-left: 3rem;
+          flex: 1;
+          min-width: 0;
+          padding-left: 0.5rem;
+          font-size: 1rem;
+          border: 1px solid $color-box-input;
+          border-radius: 7px;
+          transition: all 0.2s ease;
+          &:focus {
+            box-shadow: $shadow-box-focus;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
-  }
-}
-
-// for tab switching
-.work-log-panel {
-  display: none;
-  &.is-active {
-    display: block;
   }
 }
