@@ -43,20 +43,32 @@ function initReportGenerator() {
   const ACTIVED_TAB_CLASS = ".f-tab.is-active";
 
   const btn = document.querySelector(BTN_ID);
-  const activeTab = document.querySelector(ACTIVED_TAB_CLASS);
-  if (!btn || !activeTab) return;
+  if (!btn) return;
 
   btn.addEventListener("click", async () => {
+    const activeTab = document.querySelector(ACTIVED_TAB_CLASS);
+    if (!activeTab) return;
+
+    let reportText = "";
+    let isError = false;
+
     // generate reports based on actived tab
     if (activeTab.id === TAB_START_ID) {
       let template = templates.start;
+
       const ST_ID = "form-input-st";
       const SWP_ID = "form-input-swp";
       const PC_ID = "form-input-pc";
       // when start tab actived
-      const st = document.querySelector("#" + ST_ID).value;
-      const swp = document.querySelector("#" + SWP_ID).value;
-      const pc = document.querySelector("#" + PC_ID).value;
+      /** @type {HTMLInputElement} */
+      const stInput = document.querySelector("#" + ST_ID);
+      const pcInput = document.querySelector("#" + PC_ID);
+      /** @type {HTMLSelectElement} */
+      const swpElement = document.querySelector("#" + SWP_ID);
+
+      const st = stInput.value || stInput.placeholder;
+      const pc = pcInput.value || pcInput.placeholder;
+      const swp = swpElement.options[swpElement.selectedIndex].text;
 
       reportText = template
         .replace(`{{${ST_ID}}}`, st)
@@ -70,10 +82,16 @@ function initReportGenerator() {
       const CB_ID = "form-input-cb";
       const SC_ID = "form-input-sc";
       // when start tab actived
+      /** @type {HTMLInputElement} */
+      const cbInput = document.querySelector("#" + CB_ID);
+      const scInput = document.querySelector("#" + SC_ID);
+      /** @type {HTMLSelectElement} */
+      const ewpSelect = document.querySelector("#" + EWP_ID);
+
       const et = document.querySelector("#" + ET_ID).value;
-      const ewp = document.querySelector("#" + EWP_ID).value;
-      const cb = document.querySelector("#" + CB_ID).value;
-      const sc = document.querySelector("#" + SC_ID).value;
+      const cb = cbInput.value || cbInput.placeholder;
+      const sc = scInput.value || scInput.placeholder;
+      const ewp = ewpSelect.options[ewpSelect.selectedIndex].text;
 
       reportText = template
         .replace(`{{${ET_ID}}}`, et)
@@ -87,7 +105,10 @@ function initReportGenerator() {
 
     if (reportText) {
       await copyToClipboard(reportText);
-      showPopup("Copied to Clipboard.");
+      showPopup("Copied to Clipboard.", isError);
+    } else {
+      isError = true;
+      showPopup("Report generation failed!!", isError);
     }
   });
 }
@@ -127,16 +148,13 @@ function showPopup(message, isError = false) {
 
   popTxt.textContent = message;
 
-  btn.addEventListener("click", () => {
-    // copyToClipboard("test"); // test
-    clearTimeout(popupTimer);
-    if (isError) {
-      pop.style.backgroundColor = ERR_COLOR_BG;
-      popTxt.style.color = ERR_COLOR_FONT;
-    }
-    pop.classList.add(VISIBLE);
-    popupTimer = setTimeout(() => {
-      pop.classList.remove(VISIBLE);
-    }, 2000);
-  });
+  clearTimeout(popupTimer);
+  if (isError) {
+    pop.style.backgroundColor = ERR_COLOR_BG;
+    popTxt.style.color = ERR_COLOR_FONT;
+  }
+  pop.classList.add(VISIBLE);
+  popupTimer = setTimeout(() => {
+    pop.classList.remove(VISIBLE);
+  }, 2000);
 }
