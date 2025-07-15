@@ -13,6 +13,7 @@ body {
 }
 
 #contents {
+  display: flex;
   width: 100%;
   height: 100%;
   position: relative;
@@ -59,6 +60,26 @@ body {
   grid-template-rows: 1fr 9fr 1fr;
   place-items: center;
   z-index: 3;
+}
+#panels .backward-btn {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  border-radius: 7px;
+  border: 1px solid #ffafcc;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+#panels .backward-btn:hover {
+  background-color: #ffc8dd;
+  box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.1), -10px -10px rgb(249, 249, 249);
+}
+#panels .backward-btn:active {
+  background-color: #ffafcc;
+  box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+#panels .backward-btn a {
+  text-decoration: none;
+  color: rgba(36, 0, 0, 0.8980392157);
 }
 #panels .work-log-panel {
   width: 33rem;
