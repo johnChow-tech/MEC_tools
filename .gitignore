@@ -1,1 +1,11 @@
+# dependencies
 node_modules/
+
+# make invisible for github pages deployment
+package-lock.json
+package.json
+server.js
+app.js
+routes/
+views/
+bin/
